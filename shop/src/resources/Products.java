@@ -1,13 +1,13 @@
 package resources;
 
-public class Products {
-    Type type;
-    String name;
-    int weight;
-    int price;
-    String manufacturer;
-    int rating;
-    int quantity;
+public abstract class Products {
+    private Type type;
+    private String name;
+    private int weight;
+    private int price;
+    private String manufacturer;
+    private int rating;
+    private int quantity;
 
     public Products(Type type, String name, int weight, int price, String manufacturer, int rating, int quantity) {
         this.type = type;
@@ -19,70 +19,19 @@ public class Products {
         this.quantity = quantity;
     }
 
-    public Type getType() {
-        return type;
-    }
+    public abstract Type getType();
 
-    public void setType(Type type) {
-        this.type = type;
-    }
+    public abstract String getName();
 
-    public String getName() {
-        return name;
-    }
+    public abstract int getWeight();
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public abstract String getManufacturer();
 
-    public int getWeight() {
-        return weight;
-    }
+    public abstract int getRating();
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
+    public abstract int getPrice();
 
-    public int getPrice() {
-        return price;
-    }
+    public abstract int getQuantity();
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    @Override
-    public String toString() {
-        return "Тип продукта: " + type +
-                ", Название: '" + name + '\'' +
-                ", Масса: " + weight +
-                ", Цена: " + price +
-                ", Изготовитель: '" + manufacturer + '\'' +
-                ", Рэйтинг: " + rating +
-                ", Доступное количество: " + quantity;
-    }
+    public abstract void setQuantity(int quantity);
 }
